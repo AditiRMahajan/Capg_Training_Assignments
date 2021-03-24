@@ -1,0 +1,20 @@
+Atlanta Population
+1. db.zipcodes.find({$and:[{city:'ATLANTA'},{state:'GA'}]}).pretty()
+2. db.zipcodes.aggregate([{$match:{$and:[{city:"ATLANTA"},{state:"GA"}]}}])
+3. db.zipcodes.aggregate([{$match:{city:'ATLANTA'}},{$group:{_id:'$city',count:{$sum:1}}}])
+4. db.zipcodes.aggregate([{$match:{city:'ATLANTA'}},{$group:{_id:'$city',population:{$sum:'$pop'}}}])
+
+Population By State
+1. db.zipcodes.aggregate([{$group: {_id:{state:'$state'} , population : {$sum: '$pop'}}}])
+2. db.zipcodes.aggregate([{$group: {_id:{state:'$state'} , population : {$sum: '$pop'}}},{$sort:{population:-1}}])
+3. db.zipcodes.aggregate([{$group: {_id:{state:'$state'} , population : {$sum: '$pop'}}},{$sort:{population:-1}},{$limit:3}])
+
+Population By City
+1. db.zipcodes.aggregate([{$group:{_id:{city:'$city',state:'$state'},population:{$sum:'$pop'}}}])
+2. db.zipcodes.aggregate([{$group:{_id:{city:'$city',state:'$state'},population:{$sum:'$pop'}}},{$sort:{population:-1}}])
+3. db.zipcodes.aggregate([{$group:{_id:{city:'$city',state:'$state'},population:{$sum:'$pop'}}},{$sort:{population:-1}},{$limit:3}])
+4. db.zipcodes.aggregate([{$match:{state:'TX'}},{$group:{_id:{city:'$city',state:'$state'},population:{$sum:'$pop'}}},{$sort:{population:-1}},{$limit:3}])
+
+Bonus
+1. db.zipcodes.aggregate([{$group:{_id:{state:'$state'},population:{$avg:'$pop'}}}])
+2. db.zipcodes.aggregate([{$group:{_id:{state:'$state'},population:{$avg:'$pop'}}},{$sort:{population:-1}},{$limit:3}])

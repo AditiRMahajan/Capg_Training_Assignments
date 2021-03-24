@@ -1,0 +1,36 @@
+Query/ Find Documents
+1. db.movies.find({}).pretty()
+2. db.movies.find({'writer':'Quentin Tarantino'}).pretty()
+3. db.movies.find({'actors':'Brad Pitt'}).pretty()
+4. db.movies.find({'franchise':'The Hobbit'}).pretty()
+5. db.movies.find({$and:[{year:{$gte:1990,$lte:1999}}]}).pretty()
+6. db.movies.find({$or:[{year:{$lte:2000}}, {year:{$gte:2010}}]}).pretty()
+
+Update Document
+1. db.movies.update({title: "The Hobbit: An Unexpected Journey"}, {$set: {synopsis: "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."}})
+
+2. db.movies.update({title: "The Hobbit: The Desolation of Smaug"}, {$set: {synopsis: "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."}})
+
+3. db.movies.update({title: "Pulp Fiction"}, {$push: {actors: "Samuel L. Jackson"}})
+
+Text Search
+1. db.movies.find({synopsis:/Bilbo/}).pretty()
+2. db.movies.find({synopsis:/Gandalf/}).pretty()
+3. db.movies.find({$and:[{synopsis: /Bilbo/},{synopsis:{$not: /Gandalf/}}]}).pretty()
+4. db.movies.find({$or:[{synopsis: /dwarves/},{synopsis: /hobbit/}]}).pretty()
+5. db.movies.find({$and:[{synopsis: /gold/},{synopsis: /dragon/}]}).pretty()
+
+Delete Documents
+1. db.movies.remove({title:"Pee Wee Herman's Big Adventure"})
+2. db.movies.remove({title:"Avatar"})
+
+Quering related collections
+1. db.users.find({}).pretty()
+2. db.posts.find({}).pretty()
+3. db.posts.find({username: 'GoodGuyGreg'}).pretty()
+4. db.posts.find({username: 'ScumbagSteve'}).pretty()
+5. db.comments.find({}).pretty()
+6. db.comments.find({username: 'GoodGuyGreg'}).pretty()
+7. db.comments.find({username: 'ScumbagSteve'}).pretty()
+8. db.comments.find({post: db.posts.findOne({title: "Reports a bug in your code"})._id})
+
