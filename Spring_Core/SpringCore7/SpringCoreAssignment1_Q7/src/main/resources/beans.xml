@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+<bean id="engine" class="com.spel.Engine">
+   <property name="capacity" value="3200"/>
+   <property name="horsePower" value="250"/>
+   <property name="numberOfCylinders" value="6"/>
+</bean>
+<bean id="someCar" class="com.spel.Car">
+   <property name="make" value="Suzuki "/>
+   <property name="engine" value="#{engine}"/>
+   <property name="horsePower" value="#{engine.horsePower}"/>
+</bean>
+</beans>
