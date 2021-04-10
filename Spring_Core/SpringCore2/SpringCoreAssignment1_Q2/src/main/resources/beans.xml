@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="collection" class="assignment1_q2.Collection">
+    	<property name="QuestionList">
+    	<list>
+    	<ref bean="list0"/>
+    	<ref bean="list1"/>
+    	</list>
+    	</property>
+    	<property name="QuestionSet">
+    	<set>
+    	<ref bean="list0"/>
+    	<ref bean="list1"/>
+    	</set>
+    	</property>
+    	<property name="QuestionMap">
+    	<map>
+    	<entry key="0" value-ref="list0"></entry>
+    	<entry key="1" value-ref="list1"></entry>
+    	</map>
+    	</property>
+    </bean>
+    
+    <bean id="list0" class="assignment1_q2.Question">
+	    <property name="questionId" value="1"/>
+	    <property name="question" value="What is Java?"/>
+	    <property name="answer" value="Java is programming language"/>  
+    </bean>
+    
+    <bean id="list1" class="assignment1_q2.Question">
+	    <property name="questionId" value="2"/>
+	    <property name="question" value="What is Spring"/>
+	    <property name="answer" value="Spring is a lightweight framework"/>  
+    </bean>
+
+</beans>
