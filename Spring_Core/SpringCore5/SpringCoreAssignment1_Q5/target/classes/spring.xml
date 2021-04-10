@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> 
+<!-- <beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> -->
+
+     <context:annotation-config />
+
+    <!-- bean definitions here -->
+
+ <!-- <bean id="triangle" class="org.annotations.Triangle5">
+     <property name="pointA" ref="pointA"></property>
+     <property name="pointB" ref="pointB"></property>
+     <property name="pointC" ref="pointC"></property>
+ </bean> -->
+ 
+ <bean id="circle" class="org.annotations.Circle">
+     <property name="center" ref="center"></property>
+  </bean>
+ 
+ 
+ <bean id="center" class="org.annotations.Point">
+     <property name="x" value="5"></property>
+     <property name="y" ref="5"></property>
+ </bean>
+ 
+<!--   <bean id="pointB" class="org.annotations.Point">
+     <property name="x" value="20"></property>
+     <property name="y" ref="0"></property>
+ </bean>
+ 
+ <bean id="pointC" class="org.annotations.Point">
+     <property name="x" value="20"></property>
+     <property name="y" ref="20"></property>
+ </bean> -->
+ 
+  
+</beans>
+
