@@ -25,7 +25,7 @@ public class Controller {
         return this.us.getAllUser();
     }
 
-    @GetMapping("/authenticate")
+    @PostMapping("/authenticate")
     public String getcheck(@RequestBody User user){
         return this.us.getcheck(user);
     }
