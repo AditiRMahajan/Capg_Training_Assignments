@@ -18,9 +18,9 @@ public class Controller {
         return "Welcome!!";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/zipcodes/{id}")
     public ZipCodes getByZipCodes(@PathVariable String id){
-        return this.zs.getByZipCodes(id);
+        return zs.getByZipCodes(id);
     }
     
 }
