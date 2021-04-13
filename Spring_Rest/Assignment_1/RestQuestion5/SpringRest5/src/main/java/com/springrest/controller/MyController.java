@@ -14,34 +14,34 @@ public class MyController {
 	@Autowired
 	private EmpServices es;
 	
-	@GetMapping("/")
-    public String run(){
-        return "Welcome to Employee Management System!";
-    }
+	@GetMapping("/employee")
+        public String run(){
+		return "Welcome to Employee Management System!";
+        }
 	
-	@GetMapping("/{id}")
+	@GetMapping("findEmployee/{id}")
 	public Optional<Employee> findById(@PathVariable String id){
-        return this.es.findById(Integer.parseInt(id));
-    }
+                return es.findById(Integer.parseInt(id));
+        }
 	
-	@GetMapping("/findAll")
-    public List<Employee> findAllEmployee(){
-        return this.es.findAllEmployee();
-    }
+	@GetMapping("/findAllEmployees")
+        public List<Employee> findAllEmployee(){
+                return es.findAllEmployee();
+        }
 	
-	 @PostMapping("/")
+	 @PostMapping("/addEmployee")
 	 public Employee addDetail(@RequestBody Employee emp) {
-		 return this.es.addEmployee(emp);
+		return es.addEmployee(emp);
 	}
 	 
-	 @PutMapping("/")
+	 @PutMapping("/updateEmployee")
 	 public Employee updateDetail(@RequestBody Employee emp) {
-		 return this.es.updateEmployee(emp);
+		return es.updateEmployee(emp);
 	 }
 	 
-	 @DeleteMapping("/{id}")
+	 @DeleteMapping("/deleteEmployee/{id}")
 	 public String deletedetails(@PathVariable String id){
-	        return this.es.deleteEmployee(Integer.parseInt(id));
+	        return es.deleteEmployee(Integer.parseInt(id));
 	    }
 
 
