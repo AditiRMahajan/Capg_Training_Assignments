@@ -32,7 +32,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		        .antMatchers("/user").hasAnyRole("ADMIN", "USER")
 		        .antMatchers("/").permitAll()
 		        .and().formLogin()
-		        .and().rememberMe().key("uniqueAndSecret").tokenValiditySeconds(50);
+		        .and().rememberMe().key("rem-me-key")
+			.rememberMeParameter("remember-me-param")
+			.rememberMeCookieName("my-remember-me")
+			.tokenValiditySeconds(86400);
 	}
 	
 	 @Bean
