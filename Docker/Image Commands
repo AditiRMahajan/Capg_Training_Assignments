@@ -1,0 +1,47 @@
+C:\Users\ADITI>docker images -q
+1ae05f66eabe
+c99c7d810bc1
+
+C:\Users\ADITI>docker images -a
+REPOSITORY          TAG       IMAGE ID       CREATED       SIZE
+docker101tutorial   latest    1ae05f66eabe   2 hours ago   28MB
+alpine/git          latest    c99c7d810bc1   6 days ago    25.1MB
+
+C:\Users\ADITI>docker rmi --help
+
+Usage:  docker rmi [OPTIONS] IMAGE [IMAGE...]
+
+Remove one or more images
+
+Options:
+  -f, --force      Force removal of the image
+      --no-prune   Do not delete untagged parents
+
+C:\Users\ADITI>docker images -q
+1ae05f66eabe
+c99c7d810bc1
+
+C:\Users\ADITI>docker images
+REPOSITORY          TAG       IMAGE ID       CREATED       SIZE
+docker101tutorial   latest    1ae05f66eabe   2 hours ago   28MB
+alpine/git          latest    c99c7d810bc1   6 days ago    25.1MB
+
+C:\Users\ADITI>docker rmi 1ae05f66eabe
+Error response from daemon: conflict: unable to delete 1ae05f66eabe (cannot be forced) - image is being used by running container a8d188c023b8
+
+C:\Users\ADITI>docker rmi c99c7d810bc1
+Error response from daemon: conflict: unable to delete c99c7d810bc1 (must be forced) - image is being used by stopped container 4660ecf23b2a
+
+C:\Users\ADITI>docker rmi -f 1ae05f66eabe
+Error response from daemon: conflict: unable to delete 1ae05f66eabe (cannot be forced) - image is being used by running container a8d188c023b8
+
+C:\Users\ADITI>docker rmi -f c99c7d810bc1
+Untagged: alpine/git:latest
+Untagged: alpine/git@sha256:4bbc8fcbd15302e4011f8782bfa779d5a7439f4d41431c03c375cc9b5c6ab8c6
+Deleted: sha256:c99c7d810bc1a086c72a07fa1735efce57ea0c8d67390f4a7859c734fbadb03f
+
+C:\Users\ADITI>docker images
+REPOSITORY          TAG       IMAGE ID       CREATED       SIZE
+docker101tutorial   latest    1ae05f66eabe   2 hours ago   28MB
+
+C:\Users\ADITI>
