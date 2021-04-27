@@ -121,94 +121,15 @@ CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         PORTS     NAME
 
 *******************Q9. Find out how many image layers are used to build this image.*******************
 
-C:\Users\ADITI>docker inspect ubuntu
-[
-    {
-        "Id": "sha256:7e0aa2d69a153215c790488ed1fcec162015e973e49962d438e18249d16fa9bd",
-        "RepoTags": [
-            "ubuntu:latest"
-        ],
-        "RepoDigests": [
-            "ubuntu@sha256:cf31af331f38d1d7158470e095b132acd126a7180a54f263d386da88eb681d93"
-        ],
-        "Parent": "",
-        "Comment": "",
-        "Created": "2021-04-23T22:21:37.49442735Z",
-        "Container": "8be4461fbc3e2d9db869e63a5e140b10a085b1799c12e8a83b32aba9344eba78",
-        "ContainerConfig": {
-            "Hostname": "8be4461fbc3e",
-            "Domainname": "",
-            "User": "",
-            "AttachStdin": false,
-            "AttachStdout": false,
-            "AttachStderr": false,
-            "Tty": false,
-            "OpenStdin": false,
-            "StdinOnce": false,
-            "Env": [
-                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-            ],
-            "Cmd": [
-                "/bin/sh",
-                "-c",
-                "#(nop) ",
-                "CMD [\"/bin/bash\"]"
-            ],
-            "Image": "sha256:9d6065aabb67e06ae6b6db4f0ed5ac83f5e83a147fa5eb32b414d10583f6ce2d",
-            "Volumes": null,
-            "WorkingDir": "",
-            "Entrypoint": null,
-            "OnBuild": null,
-            "Labels": {}
-        },
-        "DockerVersion": "19.03.12",
-        "Author": "",
-        "Config": {
-            "Hostname": "",
-            "Domainname": "",
-            "User": "",
-            "AttachStdin": false,
-            "AttachStdout": false,
-            "AttachStderr": false,
-            "Tty": false,
-            "OpenStdin": false,
-            "StdinOnce": false,
-            "Env": [
-                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-            ],
-            "Cmd": [
-                "/bin/bash"
-            ],
-            "Image": "sha256:9d6065aabb67e06ae6b6db4f0ed5ac83f5e83a147fa5eb32b414d10583f6ce2d",
-            "Volumes": null,
-            "WorkingDir": "",
-            "Entrypoint": null,
-            "OnBuild": null,
-            "Labels": null
-        },
-        "Architecture": "amd64",
-        "Os": "linux",
-        "Size": 72704716,
-        "VirtualSize": 72704716,
-        "GraphDriver": {
-            "Data": {
-                "LowerDir": "/var/lib/docker/overlay2/0a555447de281356124336e2d99e9298d3cb61c80345826094a8921ec63df3d9/diff:/var/lib/docker/overlay2/e0fa6c4a58dc6fa374d38e141dcbdc77e985a16cdf8d18340b993f6c0cfe81d5/diff",
-                "MergedDir": "/var/lib/docker/overlay2/b85abe70eefc14b4dc87b653411fb9180a6c7b5f88c5357e991e4c0fb1d2bfc7/merged",
-                "UpperDir": "/var/lib/docker/overlay2/b85abe70eefc14b4dc87b653411fb9180a6c7b5f88c5357e991e4c0fb1d2bfc7/diff",
-                "WorkDir": "/var/lib/docker/overlay2/b85abe70eefc14b4dc87b653411fb9180a6c7b5f88c5357e991e4c0fb1d2bfc7/work"
-            },
-            "Name": "overlay2"
-        },
-        "RootFS": {
-            "Type": "layers",
-            "Layers": [
-                "sha256:ccdbb80308cc5ef43b605ac28fac29c6a597f89f5a169bbedbb8dec29c987439",
-                "sha256:63c99163f47292f80f9d24c5b475751dbad6dc795596e935c5c7f1c73dc08107",
-                "sha256:2f140462f3bcf8cf3752461e27dfd4b3531f266fa10cda716166bd3a78a19103"
-            ]
-        },
-        "Metadata": {
-            "LastTagTime": "0001-01-01T00:00:00Z"
-        }
-    }
-]
+
+C:\Users\ADITI>docker history ubuntu
+IMAGE          CREATED      CREATED BY                                      SIZE      COMMENT
+7e0aa2d69a15   3 days ago   /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B
+<missing>      3 days ago   /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B
+<missing>      3 days ago   /bin/sh -c [ -z "$(apt-get indextargets)" ]     0B
+<missing>      3 days ago   /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   811B
+<missing>      3 days ago   /bin/sh -c #(nop) ADD file:5c44a80f547b7d68b…   72.7MB
+
+
+*******************Q10. Get the Apache Tomcat 7 server image from the docker hub*******************
+
