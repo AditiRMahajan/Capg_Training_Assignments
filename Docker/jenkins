@@ -70,7 +70,7 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
 **************After installing login as admin, configure password and create new item with item name Job_Test1 of type freestyle project, then build using shell...type ls in it...aplly and save****************
 
-**************in cmd stop the running container*******
+**************in cmd stop and remove the running container*******
 
 C:\Users\ADITI>docker ps
 CONTAINER ID   IMAGE                 COMMAND                  CREATED       STATUS       PORTS                                              NAMES
