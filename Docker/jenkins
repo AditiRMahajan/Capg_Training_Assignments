@@ -1,0 +1,336 @@
+***********Pull jenkins image and create container for it**********
+
+docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+
+***********jenkins/jenkins image created with tag lts**********
+C:\Users\ADITI>docker images
+REPOSITORY        TAG       IMAGE ID       CREATED      SIZE
+ubuntu            latest    7e0aa2d69a15   3 days ago   72.7MB
+ubuntu            18.04     4eb8f7c43909   3 days ago   63.1MB
+jenkins/jenkins   lts       de181f8c70e8   6 days ago   569MB
+
+***********Container named beautiful khayyam created for image**********
+C:\Users\ADITI>docker ps
+CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS                                              NAMES
+10a7e8082cc0   jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   10 minutes ago   Up 10 minutes   0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   beautiful_khayyam
+
+***********Open localhoat 8080 on browser, it will open jenkins, type following password and login and install plugins************
+C:\Users\ADITI>docker logs 10a7e8082cc0
+Running from: /usr/share/jenkins/jenkins.war
+webroot: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2021-04-27 09:02:32.774+0000 [id=1]     INFO    org.eclipse.jetty.util.log.Log#initialized: Logging initialized @641ms to org.eclipse.jetty.util.log.JavaUtilLog
+2021-04-27 09:02:32.999+0000 [id=1]     INFO    winstone.Logger#logInternal: Beginning extraction from war file
+2021-04-27 09:02:36.767+0000 [id=1]     WARNING o.e.j.s.handler.ContextHandler#setContextPath: Empty contextPath
+2021-04-27 09:02:36.876+0000 [id=1]     INFO    org.eclipse.jetty.server.Server#doStart: jetty-9.4.39.v20210325; built: 2021-03-25T14:42:11.471Z; git: 9fc7ca5a922f2a37b84ec9dbc26a5168cee7e667; jvm 1.8.0_282-b08
+2021-04-27 09:02:37.506+0000 [id=1]     INFO    o.e.j.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+2021-04-27 09:02:37.622+0000 [id=1]     INFO    o.e.j.s.s.DefaultSessionIdManager#doStart: DefaultSessionIdManager workerName=node0
+2021-04-27 09:02:37.623+0000 [id=1]     INFO    o.e.j.s.s.DefaultSessionIdManager#doStart: No SessionScavenger set, using defaults
+2021-04-27 09:02:37.626+0000 [id=1]     INFO    o.e.j.server.session.HouseKeeper#startScavenging: node0 Scavenging every 660000ms
+2021-04-27 09:02:38.616+0000 [id=1]     INFO    hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2021-04-27 09:02:38.864+0000 [id=1]     INFO    o.e.j.s.handler.ContextHandler#doStart: Started w.@82c57b3{Jenkins v2.277.3,/,file:///var/jenkins_home/war/,AVAILABLE}{/var/jenkins_home/war}
+2021-04-27 09:02:38.905+0000 [id=1]     INFO    o.e.j.server.AbstractConnector#doStart: Started ServerConnector@58e1d9d{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2021-04-27 09:02:38.907+0000 [id=1]     INFO    org.eclipse.jetty.server.Server#doStart: Started @6774ms
+2021-04-27 09:02:38.909+0000 [id=23]    INFO    winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2021-04-27 09:02:41.318+0000 [id=30]    INFO    jenkins.InitReactorRunner$1#onAttained: Started initialization
+2021-04-27 09:02:41.367+0000 [id=40]    INFO    jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2021-04-27 09:02:47.941+0000 [id=40]    INFO    jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2021-04-27 09:02:47.956+0000 [id=39]    INFO    jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2021-04-27 09:02:47.976+0000 [id=32]    INFO    jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2021-04-27 09:02:50.803+0000 [id=36]    INFO    jenkins.InitReactorRunner$1#onAttained: System config loaded
+2021-04-27 09:02:50.804+0000 [id=36]    INFO    jenkins.InitReactorRunner$1#onAttained: System config adapted
+2021-04-27 09:02:50.805+0000 [id=42]    INFO    jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2021-04-27 09:02:50.806+0000 [id=38]    INFO    jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2021-04-27 09:02:50.828+0000 [id=56]    INFO    hudson.model.AsyncPeriodicWork#lambda$doRun$0: Started Download metadata
+2021-04-27 09:02:50.854+0000 [id=56]    INFO    hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+2021-04-27 09:02:51.633+0000 [id=36]    INFO    jenkins.install.SetupWizard#init:
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+313775c770794b6c8e26b4400bcd13df
+
+This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+2021-04-27 09:06:04.141+0000 [id=43]    INFO    jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2021-04-27 09:06:04.175+0000 [id=22]    INFO    hudson.WebAppMain$3#run: Jenkins is fully up and running
+2021-04-27 09:06:40.202+0000 [id=56]    INFO    h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+2021-04-27 09:06:40.204+0000 [id=56]    INFO    hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1
+2021-04-27 09:06:40.211+0000 [id=56]    INFO    hudson.model.AsyncPeriodicWork#lambda$doRun$0: Finished Download metadata. 229,380 ms
+2021-04-27 09:09:54.790+0000 [id=80]    INFO    hudson.model.AsyncPeriodicWork#lambda$doRun$0: Started Periodic background build discarder
+2021-04-27 09:09:54.794+0000 [id=80]    INFO    hudson.model.AsyncPeriodicWork#lambda$doRun$0: Finished Periodic background build discarder. 1 ms
+
+
+**************After installing login as admin, configure password and create new item with item name Job_Test1 of type freestyle project, then build using shell...type ls in it...aplly and save****************
+
+**************in cmd stop the running container*******
+
+C:\Users\ADITI>docker ps
+CONTAINER ID   IMAGE                 COMMAND                  CREATED       STATUS       PORTS                                              NAMES
+10a7e8082cc0   jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   2 hours ago   Up 2 hours   0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   beautiful_khayyam
+
+C:\Users\ADITI>docker stop beautiful_khayyam
+beautiful_khayyam
+
+*********remove container**********
+
+***********again create container with another name**********
+docker run -p 9090:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+
+*************now you can share plugins,jobs,data between containers using physical locations with the help of jenkins********
+open localhost 9090 ..you can now able to see jenkins login page...no need to download plugins again..u will find all ur previous container data even if u deleted and removed from ur physical location(computer)
+
+***********Already created volume for jenkins...u can chech volume's name and type in MOUNT section below..its make easy for containers to share data between them*******
+C:\Users\ADITI>docker inspect beautiful_khayyam
+[
+    {
+        "Id": "10a7e8082cc0c78d326cf27e1a62162f09fb4164fa78bcd0c177b49ea7120569",        "Created": "2021-04-27T09:02:29.1399864Z",
+        "Path": "/sbin/tini",
+        "Args": [
+            "--",
+            "/usr/local/bin/jenkins.sh"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 143,
+            "Error": "",
+            "StartedAt": "2021-04-27T09:02:32.0946899Z",
+            "FinishedAt": "2021-04-27T10:47:35.2293553Z"
+        },
+        "Image": "sha256:de181f8c70e8493e39c777a48fe58fdaf69cddf218c9855e4c2cbaacf572147a",
+        "ResolvConfPath": "/var/lib/docker/containers/10a7e8082cc0c78d326cf27e1a62162f09fb4164fa78bcd0c177b49ea7120569/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/10a7e8082cc0c78d326cf27e1a62162f09fb4164fa78bcd0c177b49ea7120569/hostname",
+        "HostsPath": "/var/lib/docker/containers/10a7e8082cc0c78d326cf27e1a62162f09fb4164fa78bcd0c177b49ea7120569/hosts",
+        "LogPath": "/var/lib/docker/containers/10a7e8082cc0c78d326cf27e1a62162f09fb4164fa78bcd0c177b49ea7120569/10a7e8082cc0c78d326cf27e1a62162f09fb4164fa78bcd0c177b49ea7120569-json.log",
+        "Name": "/beautiful_khayyam",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "jenkins_home:/var/jenkins_home"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {
+                "50000/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "50000"
+                    }
+                ],
+                "8080/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "8080"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                41,
+                172
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/c8e1370558aedddbb354d3a65ab96b2d50e8819fe7b8eca40e7d064700d946d9-init/diff:/var/lib/docker/overlay2/b5a2a6c9784c003343fd60c436038473263b2f911fdbbaae1c4e1b34504b819b/diff:/var/lib/docker/overlay2/589b483ec9d2055194033d9c4946ece25841b82fb5f30e9f0182759bd3801f9c/diff:/var/lib/docker/overlay2/f037f216a1cd99661ea6976dd017317c48931a28e6f36f85b5d98e9d37365eae/diff:/var/lib/docker/overlay2/d3807602960a234a319a36256b8a5dda20c0e86a53f96bebc18b59f21f24ec6d/diff:/var/lib/docker/overlay2/da68b7ecc056bd9395474894893d9746d2afd4dfd635596637d086054ab1eaba/diff:/var/lib/docker/overlay2/55b250593c16abb8796fb6ee4007b28dd1afb6149af6e093c6553e38affdda12/diff:/var/lib/docker/overlay2/dfcd6e1812c4467037f8df27eaff700c9525ee4772cdc01015a5e13ce0c78186/diff:/var/lib/docker/overlay2/7d21ba4c5107b894f17cded0d50302d152e28c916d952396c846324c3d70f918/diff:/var/lib/docker/overlay2/a2c3ec5ad34e544ca2015f2d578189533e88db6f8fa603b059714c3fa3bcc494/diff:/var/lib/docker/overlay2/0d461997aa98f7c5ee055dfb0755401648901a27866dcf5f8a314d347fddef8e/diff:/var/lib/docker/overlay2/fb7d6599b64b642f0afd576e3756266a54ec8e2f0239b9df9f3d0b29c248124a/diff:/var/lib/docker/overlay2/ce1fcfb44e371546e4242cd79eaf457cbca7bb6838279f321f8bbd8a49ec7b68/diff:/var/lib/docker/overlay2/0071cd9f1959a6e71c8f79608f1181d1ac9ed2f2572a5725b498e136c0bf1766/diff:/var/lib/docker/overlay2/fbae6a8728bbcc31934f6d844052d522ec93b571b01369fbf40a01f19af7276f/diff:/var/lib/docker/overlay2/e812e61d1d55aa3c46c4bfc1fef5164feab9039b68fe154ea92fff027a263754/diff:/var/lib/docker/overlay2/118702829ed1713ac571a206718fb4a32ed3b31cd84d5d4ecca1fc69bb5b56b1/diff",
+                "MergedDir": "/var/lib/docker/overlay2/c8e1370558aedddbb354d3a65ab96b2d50e8819fe7b8eca40e7d064700d946d9/merged",
+                "UpperDir": "/var/lib/docker/overlay2/c8e1370558aedddbb354d3a65ab96b2d50e8819fe7b8eca40e7d064700d946d9/diff",
+                "WorkDir": "/var/lib/docker/overlay2/c8e1370558aedddbb354d3a65ab96b2d50e8819fe7b8eca40e7d064700d946d9/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "jenkins_home",
+                "Source": "/var/lib/docker/volumes/jenkins_home/_data",
+                "Destination": "/var/jenkins_home",
+                "Driver": "local",
+                "Mode": "z",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "10a7e8082cc0",
+            "Domainname": "",
+            "User": "jenkins",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "50000/tcp": {},
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=en_US.UTF-8",
+                "LANGUAGE=en_US:en",
+                "LC_ALL=en_US.UTF-8",
+                "JAVA_VERSION=jdk8u282-b08",
+                "JAVA_HOME=/opt/java/openjdk",
+                "JENKINS_HOME=/var/jenkins_home",
+                "JENKINS_SLAVE_AGENT_PORT=50000",
+                "REF=/usr/share/jenkins/ref",
+                "JENKINS_VERSION=2.277.3",
+                "JENKINS_UC=https://updates.jenkins.io",
+                "JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental",
+                "JENKINS_INCREMENTALS_REPO_MIRROR=https://repo.jenkins-ci.org/incrementals",
+                "COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log"
+            ],
+            "Cmd": null,
+            "Image": "jenkins/jenkins:lts",
+            "Volumes": {
+                "/var/jenkins_home": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/sbin/tini",
+                "--",
+                "/usr/local/bin/jenkins.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "dc9417cd27b21294f0137ee16e376171ba507542cef7bd7ecc14b9e7f60d2b0c",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {},
+            "SandboxKey": "/var/run/docker/netns/dc9417cd27b2",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "9f36ec07b37dd5ca3e5c927efefe306b7684d02753cc218a43f8390b611e1225",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
