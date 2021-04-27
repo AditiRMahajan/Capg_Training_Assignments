@@ -1,0 +1,36 @@
+**********Make a file named Dockerfile*********
+C:\Users\ADITI>mkdir DockerFiles
+
+C:\Users\ADITI>cd DockerFiles/
+
+C:\Users\ADITI\DockerFiles>touch Dockerfile
+
+
+********put following instructions in it for getting base image from ubuntu**********
+C:\Users\ADITI\DockerFiles>vi Dockerfile.txt
+
+FROM ubuntu
+
+MAINTAINER aditi mahajan <adimahajan258@gmail.com>
+
+RUN apt-get update
+
+CMD ["echo", "Hello World...! from my first docker image"]
+
+
+*******display instructions*******
+PS C:\Users\ADITI\DockerFiles> cat Dockerfile
+FROM ubuntu
+
+MAINTAINER aditi mahajan <adimahajan258@gmail.com>
+
+RUN apt-get update
+
+CMD ["echo", "Hello World...! from my first docker image"]
+
+******build dockerfile to create image with name myimage1 and tag 1.0******
+PS C:\Users\ADITI\DockerFiles> docker build -t myimage1:1.0 .
+
+*******run image to create container******
+PS C:\Users\ADITI\DockerFiles> docker rum myimage1
+
