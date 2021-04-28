@@ -8,14 +8,6 @@ C:\Users\ADITI>mkdir DockerComposeFile
 
 C:\Users\ADITI>cd DockerComposeFile/
 
-C:\Users\ADITI\DockerComposeFile>ls
-'ls' is not recognized as an internal or external command,
-operable program or batch file.
-
-C:\Users\ADITI\DockerComposeFile>docker-compose config
-ERROR: Version in ".\docker-compose.yml" is invalid. You might be seeing this error because you're using the wrong Compose file version. Either specify a supported version (e.g "2.2" or "3.3") and place your service definitions under the `services` key, or omit the `version` key and place your service definitions at the root of the file to use version 1.
-For more on the Compose file format versions, see https://docs.docker.com/compose/compose-file/
-
 C:\Users\ADITI\DockerComposeFile>docker-compose config
 services:
   redis:
@@ -28,41 +20,6 @@ services:
       target: 5000
 version: '3.9'
 
-
-C:\Users\ADITI\DockerComposeFile>docker-compose up -d
-Docker Compose is now in the Docker CLI, try `docker compose up`
-
-Creating network "dockercomposefile_default" with the default driver
-Building web
-failed to get console mode for stdout: The handle is invalid.
-[+] Building 0.0s (0/1)                                                       [+] Building 0.1s (1/2)                                                         iled to solve with frontend dockerfile.v0: failed to read dockerfile: open / => [internal] load build definition from Dockerfile                       0.1[+] Building 0.1s (1/2)                                                         > => transferring dockerfile: 2B                                         0.0 => [internal] load build definition from Dockerfile                       0.1s
- => => transferring dockerfile: 2B                                         0.0s
-ERROR: Service 'web' failed to build
-
-C:\Users\ADITI\DockerComposeFile>docker-compose config
-services:
-  redis:
-    image: redis:alpine
-  web:
-    build:
-      context: C:\Users\ADITI\DockerComposeFile
-    image: nginx
-    ports:
-    - published: 5000
-      target: 5000
-version: '3.9'
-
-
-C:\Users\ADITI\DockerComposeFile>docker-compose up -d
-Docker Compose is now in the Docker CLI, try `docker compose up`
-
-Building web
-failed to get console mode for stdout: The handle is invalid.
-[+] Building 0.0s (0/1)
-failed to solve with frontend dockerfile.v0: failed to read dockerfile: open /var/lib/docker/tmp/buildkit-mount751903563/Dockerfile: no such file or directo[+] Building 0.1s (1/2)
- => [internal] load build definition from Dockerfile                       0.0s
- => => transferring dockerfile: 2B                                         0.0s
-ERROR: Service 'web' failed to build
 
 C:\Users\ADITI\DockerComposeFile>docker-compose config
 services:
