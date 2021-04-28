@@ -1,0 +1,270 @@
+Microsoft Windows [Version 10.0.19041.928]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ADITI>docker-compose -v
+docker-compose version 1.29.0, build 07737305
+
+C:\Users\ADITI>mkdir DockerComposeFile
+
+C:\Users\ADITI>cd DockerComposeFile/
+
+C:\Users\ADITI\DockerComposeFile>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\ADITI\DockerComposeFile>docker-compose config
+ERROR: Version in ".\docker-compose.yml" is invalid. You might be seeing this error because you're using the wrong Compose file version. Either specify a supported version (e.g "2.2" or "3.3") and place your service definitions under the `services` key, or omit the `version` key and place your service definitions at the root of the file to use version 1.
+For more on the Compose file format versions, see https://docs.docker.com/compose/compose-file/
+
+C:\Users\ADITI\DockerComposeFile>docker-compose config
+services:
+  redis:
+    image: redis:alpine
+  web:
+    build:
+      context: C:\Users\ADITI\DockerComposeFile
+    ports:
+    - published: 5000
+      target: 5000
+version: '3.9'
+
+
+C:\Users\ADITI\DockerComposeFile>docker-compose up -d
+Docker Compose is now in the Docker CLI, try `docker compose up`
+
+Creating network "dockercomposefile_default" with the default driver
+Building web
+failed to get console mode for stdout: The handle is invalid.
+[+] Building 0.0s (0/1)                                                       [+] Building 0.1s (1/2)                                                         iled to solve with frontend dockerfile.v0: failed to read dockerfile: open / => [internal] load build definition from Dockerfile                       0.1[+] Building 0.1s (1/2)                                                         > => transferring dockerfile: 2B                                         0.0 => [internal] load build definition from Dockerfile                       0.1s
+ => => transferring dockerfile: 2B                                         0.0s
+ERROR: Service 'web' failed to build
+
+C:\Users\ADITI\DockerComposeFile>docker-compose config
+services:
+  redis:
+    image: redis:alpine
+  web:
+    build:
+      context: C:\Users\ADITI\DockerComposeFile
+    image: nginx
+    ports:
+    - published: 5000
+      target: 5000
+version: '3.9'
+
+
+C:\Users\ADITI\DockerComposeFile>docker-compose up -d
+Docker Compose is now in the Docker CLI, try `docker compose up`
+
+Building web
+failed to get console mode for stdout: The handle is invalid.
+[+] Building 0.0s (0/1)
+failed to solve with frontend dockerfile.v0: failed to read dockerfile: open /var/lib/docker/tmp/buildkit-mount751903563/Dockerfile: no such file or directo[+] Building 0.1s (1/2)
+ => [internal] load build definition from Dockerfile                       0.0s
+ => => transferring dockerfile: 2B                                         0.0s
+ERROR: Service 'web' failed to build
+
+C:\Users\ADITI\DockerComposeFile>docker-compose config
+services:
+  database:
+    image: redis
+  web:
+    image: nginx
+version: '3.9'
+
+
+C:\Users\ADITI\DockerComposeFile>docker-compose up -d
+Docker Compose is now in the Docker CLI, try `docker compose up`
+
+Pulling web (nginx:)...
+latest: Pulling from library/nginx
+f7ec5a41d630: Downloading [>                                                  ]  277.5kB/27.14MBing fs layer
+f7ec5a41d630: Downloading [=>                                                 ]    556kB/27.14MBing
+f7ec5a41d630: Downloading [=>                                                 ]  834.8kB/27.14MBing
+f7ec5a41d630: Downloading [==>                                                ]  1.117MB/27.14MB
+f7ec5a41d630: Downloading [==>                                                ]  1.404MB/27.14MB
+f7ec5a41d630: Downloading [===>                                               ]  1.682MB/27.14MB
+f7ec5a41d630: Downloading [===>                                               ]   1.96MB/27.14MB
+f7ec5a41d630: Downloading [====>                                              f7ec5a41d630: Downloading [====>                                              ]  2.526MB/27.14MB
+f7ec5a41d630: Downloading [=====>                                             ]  2.812MB/27.14MB
+f7ec5a41d630: Downloading [=====>                                             ]  3.091MB/27.14MB
+
+b78b95af9b17: Downloading [===================================>               f7ec5a41d630: Downloading [======>                                            ]  3.365MB/27.14MBload complete
+f7ec5a41d630: Downloading [======>                                            f7ec5a41d630: Downloading [=======>                                           ]  3.922MB/27.14MB
+f7ec5a41d630: Downloading [=======>                                           ]  4.201MB/27.14MB
+f7ec5a41d630: Downloading [========>                                          ]  4.479MB/27.14MB
+f7ec5a41d630: Downloading [========>                                          ]  4.758MB/27.14MB
+f7ec5a41d630: Downloading [=========>                                         ]  5.036MB/27.14MB
+f7ec5a41d630: Downloading [=========>                                         ]  5.315MB/27.14MB
+f7ec5a41d630: Downloading [==========>                                        ]  5.602MB/27.14MB
+f7ec5a41d630: Downloading [==========>                                        ]  5.884MB/27.14MB
+f7ec5a41d630: Downloading [===========>                                       f7ec5a41d630: Downloading [===========>                                       ]  6.441MB/27.14MB
+f7ec5a41d630: Downloading [============>                                      ]   6.72MB/27.14MB
+f7ec5a41d630: Downloading [============>                                      ]  6.998MB/27.14MB
+f7ec5a41d630: Downloading [=============>                                     ]  7.281MB/27.14MB
+f7ec5a41d630: Downloading [=============>                                     ]  7.568MB/27.14MB
+f7ec5a41d630: Downloading [==============>                                    ]  7.846MB/27.14MB
+f7ec5a41d630: Downloading [==============>                                    ]  8.125MB/27.14MB
+f7ec5a41d630: Downloading [===============>                                   ]  8.407MB/27.14MB
+
+
+f7ec5a41d630: Downloading [================>                                  ]  8.686MB/27.14MBloading [==================================================>f7ec5a41d630: Downloading [================>                                  ]  8.965MB/27.14MB
+f7ec5a41d630: Downloading [=================>                                 ]  9.243MB/27.14MB
+f7ec5a41d630: Downloading [=================>                                 f7ec5a41d630: Downloading [==================>                                ]  9.808MB/27.14MB
+f7ec5a41d630: Downloading [==================>                                ]  10.09MB/27.14MB
+f7ec5a41d630: Downloading [===================>                               ]  10.37MB/27.14MB
+f7ec5a41d630: Downloading [===================>                               ]  10.64MB/27.14MB
+f7ec5a41d630: Downloading [====================>                              ]  10.92MB/27.14MB
+f7ec5a41d630: Downloading [====================>                              ]   11.2MB/27.14MB
+f7ec5a41d630: Downloading [=====================>                             f7ec5a41d630: Downloading [=====================>                             ]  11.76MB/27.14MB
+f7ec5a41d630: Downloading [======================>                            ]  12.04MB/27.14MB
+f7ec5a41d630: Downloading [======================>                            ]  12.32MB/27.14MB
+f7ec5a41d630: Downloading [=======================>                           ]  12.61MB/27.14MB
+f7ec5a41d630: Downloading [=======================>                           ]  12.89MB/27.14MB
+f7ec5a41d630: Downloading [========================>                          ]  13.17MB/27.14MB
+f7ec5a41d630: Downloading [========================>                          ]  13.45MB/27.14MB
+f7ec5a41d630: Downloading [=========================>                         ]  13.73MB/27.14MB
+f7ec5a41d630: Downloading [=========================>                         ]  14.01MB/27.14MB
+f7ec5a41d630: Downloading [==========================>                        ]  14.29MB/27.14MB
+f7ec5a41d630: Downloading [==========================>                        ]  14.56MB/27.14MB
+f7ec5a41d630: Downloading [===========================>                       ]  14.84MB/27.14MB
+aa1efa14b3bf: Downloading [=========================>                         ]  13.31MB/26.58MB
+
+f7ec5a41d630: Downloading [===========================>                       ]  15.12MB/27.14MBloading [===============================>                   f7ec5a41d630: Downloading [============================>                      ]   15.4MB/27.14MBload complete
+f7ec5a41d630: Downloading [============================>                      ]  15.67MB/27.14MB
+f7ec5a41d630: Downloading [=============================>                     ]  15.95MB/27.14MB
+aa1efa14b3bf: Downloading [===========================>                       f7ec5a41d630: Downloading [=============================>                     ]  16.23MB/27.14MB
+f7ec5a41d630: Downloading [==============================>                    ]  16.51MB/27.14MB
+f7ec5a41d630: Downloading [==============================>                    ]  16.79MB/27.14MB
+aa1efa14b3bf: Downloading [=============================>                     f7ec5a41d630: Downloading [===============================>                   ]  17.07MB/27.14MB
+f7ec5a41d630: Downloading [===============================>                   ]  17.35MB/27.14MB
+aa1efa14b3bf: Downloading [===============================>                   f7ec5a41d630: Downloading [================================>                  ]  17.63MB/27.14MB
+f7ec5a41d630: Downloading [=================================>                 ]  17.91MB/27.14MB
+aa1efa14b3bf: Downloading [================================>                  f7ec5a41d630: Downloading [=================================>                 ]  18.19MB/27.14MB
+f7ec5a41d630: Downloading [==================================>                ]  18.47MB/27.14MB
+aa1efa14b3bf: Downloading [==================================>                f7ec5a41d630: Downloading [==================================>                ]  18.75MB/27.14MB
+f7ec5a41d630: Downloading [===================================>               ]  19.03MB/27.14MB
+aa1efa14b3bf: Downloading [===================================>               f7ec5a41d630: Downloading [===================================>               ]  19.31MB/27.14MB
+aa1efa14b3bf: Downloading [====================================>              f7ec5a41d630: Downloading [====================================>              ]  19.59MB/27.14MB
+f7ec5a41d630: Downloading [====================================>              ]  19.87MB/27.14MB
+aa1efa14b3bf: Downloading [======================================>            f7ec5a41d630: Downloading [=====================================>             ]  20.15MB/27.14MB
+
+
+f7ec5a41d630: Downloading [=====================================>             ]  20.43MB/27.14MB
+aa1efa14b3bf: Downloading [========================================>          aa1efa14b3bf: Downloading [========================================>          aa1efa14b3bf: Downloading [=========================================>         f7ec5a41d630: Downloading [======================================>            ]   20.7MB/27.14MB
+f7ec5a41d630: Downloading [======================================>            ]  20.98MB/27.14MB
+aa1efa14b3bf: Downloading [==========================================>        f7ec5a41d630: Downloading [=======================================>           ]  21.26MB/27.14MB
+f7ec5a41d630: Downloading [=======================================>           f7ec5a41d630: Downloading [========================================>          f7ec5a41d630: Downloading [========================================>          ]   22.1MB/27.14MB
+f7ec5a41d630: Downloading [=========================================>         ]  22.39MB/27.14MB
+f7ec5a41d630: Downloading [=========================================>         ]  22.67MB/27.14MB
+aa1efa14b3bf: Downloading [=============================================>     aa1efa14b3bf: Downloading [=============================================>     aa1efa14b3bf: Downloading [==============================================>    f7ec5a41d630: Downloading [==========================================>        ]  22.94MB/27.14MB
+aa1efa14b3bf: Downloading [===============================================>   aa1efa14b3bf: Downloading [===============================================>   f7ec5a41d630: Downloading [==========================================>        ]  23.22MB/27.14MB
+aa1efa14b3bf: Downloading [================================================>  f7ec5a41d630: Downloading [===========================================>       f7ec5a41d630: Downloading [===========================================>       f7ec5a41d630: Downloading [============================================>      f7ec5a41d630: Downloading [============================================>      f7ec5a41d630: Downloading [=============================================>     f7ec5a41d630: Downloading [=============================================>     f7ec5a41d630: Downloading [==============================================>    f7ec5a41d630: Downloading [==============================================>    f7ec5a41d630: Downloading [===============================================>   f7ec5a41d630: Downloading [===============================================>   f7ec5a41d630: Downloading [================================================>  f7ec5a41d630: Downloading [================================================>  f7ec5a41d630: Downloading [=================================================> f7ec5a41d630: Downloading [=================================================> f7ec5a41d630: Extracting [>                                                  ]f7ec5a41d630: Extracting [==>                                                ]f7ec5a41d630: Extracting [===>                                               ]f7ec5a41d630: Extracting [====>                                              ]f7ec5a41d630: Extracting [=======>                                           ]f7ec5a41d630: Extracting [==========>                                        ]f7ec5a41d630: Extracting [============>                                      ]f7ec5a41d630: Extracting [===============>                                   ]f7ec5a41d630: Extracting [=================>                                 ]f7ec5a41d630: Extracting [===================>                               ]f7ec5a41d630: Extracting [====================>                              ]f7ec5a41d630: Extracting [======================>                            ]f7ec5a41d630: Extracting [=======================>                           ]f7ec5a41d630: Extracting [=========================>                         ]f7ec5a41d630: Extracting [===========================>                       ]f7ec5a41d630: Extracting [============================>                      ]f7ec5a41d630: Extracting [=============================>                     ]f7ec5a41d630: Extracting [===============================>                   ]f7ec5a41d630: Extracting [=================================>                 ]f7ec5a41d630: Extracting [===================================>               ]f7ec5a41d630: Extracting [=====================================>             ]f7ec5a41d630: Extracting [=======================================>           ]f7ec5a41d630: Extracting [=========================================>         ]f7ec5a41d630: Extracting [==========================================>        ]f7ec5a41d630: Extracting [============================================>      ]f7ec5a41d630: Extracting [=============================================>     ]f7ec5a41d630: Extracting [===============================================>   ]f7ec5a41d630: Extracting [===============================================>   ]f7ec5a41d630: Extracting [================================================>  ]f7ec5a41d630: Extracting [=================================================> ]f7ec5a41d630: Extracting [==================================================>]f7ec5a41d630: Pull complete
+aa1efa14b3bf: Extracting [>                                                  ]aa1efa14b3bf: Extracting [===>                                               ]aa1efa14b3bf: Extracting [=====>                                             ]aa1efa14b3bf: Extracting [========>                                          ]aa1efa14b3bf: Extracting [===========>                                       ]aa1efa14b3bf: Extracting [================>                                  ]aa1efa14b3bf: Extracting [===================>                               ]aa1efa14b3bf: Extracting [=====================>                             ]aa1efa14b3bf: Extracting [=========================>                         ]aa1efa14b3bf: Extracting [=============================>                     ]aa1efa14b3bf: Extracting [================================>                  ]aa1efa14b3bf: Extracting [====================================>              ]aa1efa14b3bf: Extracting [=======================================>           ]aa1efa14b3bf: Extracting [===========================================>       ]aa1efa14b3bf: Extracting [=============================================>     ]aa1efa14b3bf: Extracting [===============================================>   ]aa1efa14b3bf: Extracting [=================================================> ]aa1efa14b3bf: Extracting [==================================================>]aa1efa14b3bf: Pull complete
+b78b95af9b17: Extracting [==================================================>]b78b95af9b17: Extracting [==================================================>]b78b95af9b17: Pull complete
+c7d6bca2b8dc: Extracting [==================================================>]c7d6bca2b8dc: Extracting [==================================================>]c7d6bca2b8dc: Pull complete
+cf16cd8e71e0: Extracting [==================================================>]cf16cd8e71e0: Extracting [==================================================>]cf16cd8e71e0: Pull complete
+0241c68333ef: Extracting [==================================================>]0241c68333ef: Extracting [==================================================>]0241c68333ef: Pull complete
+Digest: sha256:75a55d33ecc73c2a242450a9f1cc858499d468f077ea942867e662c247b5e412
+Status: Downloaded newer image for nginx:latest
+Pulling database (redis:)...
+latest: Pulling from library/redis
+f7ec5a41d630: Already exists
+a36224ca8bbd: Pulling fs layer
+7630ad34dcb2: Downloading [>                                                  7630ad34dcb2: Downloading [====>                                              7630ad34dcb2: Downloading [=========>                                         7630ad34dcb2: Downloading [===============>                                   a36224ca8bbd: Downloading [============>                                      a36224ca8bbd: Downloading [==================================================>a36224ca8bbd: Extracting [==================================================>]   1.73kB/1.73kB
+a36224ca8bbd: Extracting [==================================================>]a36224ca8bbd: Pull complete
+7630ad34dcb2: Extracting [=>                                                 ]7630ad34dcb2: Extracting [==================>                                ]  524.3kB/1.418MB
+7630ad34dcb2: Extracting [==================================================>]7630ad34dcb2: Pull complete
+c6d2a5632e6c: Downloading [=>                                                 c6d2a5632e6c: Downloading [==>                                                c6d2a5632e6c: Downloading [====>                                              c6d2a5632e6c: Downloading [======>                                            c6d2a5632e6c: Downloading [=======>                                           c6d2a5632e6c: Downloading [========>                                          c6d2a5632e6c: Downloading [==========>                                        c6d2a5632e6c: Downloading [===========>                                       c6d2a5632e6c: Downloading [============>                                      c6d2a5632e6c: Downloading [=============>                                     c6d2a5632e6c: Downloading [==============>                                    c6d2a5632e6c: Downloading [===============>                                   c6d2a5632e6c: Downloading [=================>                                 c6d2a5632e6c: Downloading [==================>                                c6d2a5632e6c: Downloading [====================>                              c6d2a5632e6c: Downloading [=====================>                             c6d2a5632e6c: Downloading [=======================>                           c6d2a5632e6c: Downloading [========================>                          c6d2a5632e6c: Downloading [========================>                          c6d2a5632e6c: Downloading [=========================>                         c6d2a5632e6c: Downloading [==========================>                        c6d2a5632e6c: Downloading [===========================>                       c6d2a5632e6c: Downloading [============================>                      c6d2a5632e6c: Downloading [=============================>                     ]  6.003MB/10.11MB
+c6d2a5632e6c: Downloading [==============================>                    c6d2a5632e6c: Downloading [===============================>                   c6d2a5632e6c: Downloading [===============================>                   c6d2a5632e6c: Downloading [================================>                  c6d2a5632e6c: Downloading [=================================>                 c6d2a5632e6c: Downloading [=================================>                 c6d2a5632e6c: Downloading [==================================>                c6d2a5632e6c: Downloading [==================================>                c6d2a5632e6c: Downloading [===================================>               c6d2a5632e6c: Downloading [===================================>               c6d2a5632e6c: Downloading [====================================>              c6d2a5632e6c: Downloading [====================================>              c6d2a5632e6c: Downloading [=====================================>             c6d2a5632e6c: Downloading [======================================>            c6d2a5632e6c: Downloading [======================================>            c6d2a5632e6c: Downloading [=======================================>           c6d2a5632e6c: Downloading [=======================================>           c6d2a5632e6c: Downloading [========================================>          c6d2a5632e6c: Downloading [========================================>          c6d2a5632e6c: Downloading [=========================================>         c6d2a5632e6c: Downloading [==========================================>        c6d2a5632e6c: Downloading [==========================================>        ]  8.612MB/10.11MB
+c6d2a5632e6c: Downloading [===========================================>       c6d2a5632e6c: Downloading [===========================================>       c6d2a5632e6c: Downloading [============================================>      c6d2a5632e6c: Downloading [============================================>      c6d2a5632e6c: Downloading [=============================================>     c6d2a5632e6c: Downloading [=============================================>     c6d2a5632e6c: Downloading [===============================================>   c6d2a5632e6c: Downloading [===============================================>   c6d2a5632e6c: Downloading [================================================>  c6d2a5632e6c: Downloading [================================================>  c6d2a5632e6c: Downloading [=================================================> c6d2a5632e6c: Downloading [=================================================> c6d2a5632e6c: Extracting [>                                                  ]c6d2a5632e6c: Extracting [======>                                            ]c6d2a5632e6c: Extracting [===========>                                       ]c6d2a5632e6c: Extracting [===============>                                   ]c6d2a5632e6c: Extracting [==================>                                ]c6d2a5632e6c: Extracting [=======================>                           ]c6d2a5632e6c: Extracting [===========================>                       ]c6d2a5632e6c: Extracting [================================>                  ]c6d2a5632e6c: Extracting [=====================================>             ]c6d2a5632e6c: Extracting [==========================================>        ]c6d2a5632e6c: Extracting [==============================================>    ]c6d2a5632e6c: Extracting [=================================================> ]c6d2a5632e6c: Extracting [==================================================>]c6d2a5632e6c: Pull complete
+f1957981f3c1: Extracting [==================================================>]f1957981f3c1: Extracting [==================================================>]f1957981f3c1: Pull complete
+42642d666cff: Extracting [==================================================>]42642d666cff: Extracting [==================================================>]42642d666cff: Pull complete
+Digest: sha256:e10f55f92478715698a2cef97c2bbdc48df2a05081edd884938903aa60df6396
+Status: Downloaded newer image for redis:latest
+Creating dockercomposefile_database_1 ... done
+Creating dockercomposefile_web_1      ... done
+
+C:\Users\ADITI\DockerComposeFile>docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS      NAMES
+d00584d476ff   nginx     "/docker-entrypoint.…"   30 seconds ago   Up 27 seconds   80/tcp     dockercomposefile_web_1
+49deef803681   redis     "docker-entrypoint.s…"   30 seconds ago   Up 27 seconds   6379/tcp   dockercomposefile_database_1
+
+C:\Users\ADITI\DockerComposeFile>docker-compose down
+Stopping dockercomposefile_web_1      ... done
+Stopping dockercomposefile_database_1 ... done
+Removing dockercomposefile_web_1      ... done
+Removing dockercomposefile_database_1 ... done
+Removing network dockercomposefile_default
+
+C:\Users\ADITI\DockerComposeFile>docker-compose config
+services:
+  database:
+    image: redis
+  web:
+    image: nginx
+    ports:
+    - published: 5000
+      target: 5000
+version: '3.9'
+
+
+C:\Users\ADITI\DockerComposeFile>docker-compose up -d
+Docker Compose is now in the Docker CLI, try `docker compose up`
+
+Creating network "dockercomposefile_default" with the default driver
+Creating dockercomposefile_web_1      ... done
+Creating dockercomposefile_database_1 ... done
+
+C:\Users\ADITI\DockerComposeFile>docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                            NAMES
+876a0cc3b477   nginx     "/docker-entrypoint.…"   14 seconds ago   Up 13 seconds   80/tcp, 0.0.0.0:5000->5000/tcp   dockercomposefile_web_1
+e8ee8453db5a   redis     "docker-entrypoint.s…"   14 seconds ago   Up 13 seconds   6379/tcp                         dockercomposefile_database_1
+
+C:\Users\ADITI\DockerComposeFile>docker-compose down
+Stopping dockercomposefile_web_1      ... done
+Stopping dockercomposefile_database_1 ... done
+Removing dockercomposefile_web_1      ... done
+Removing dockercomposefile_database_1 ... done
+Removing network dockercomposefile_default
+
+C:\Users\ADITI\DockerComposeFile>docker-compose config
+services:
+  database:
+    image: redis
+  web:
+    image: nginx
+    ports:
+    - published: 5000
+      target: 5000
+version: '3.9'
+
+
+C:\Users\ADITI\DockerComposeFile>docker-compose up -d --scale database=3
+Docker Compose is now in the Docker CLI, try `docker compose up`
+
+Creating network "dockercomposefile_default" with the default driver
+Creating dockercomposefile_database_1 ... done
+Creating dockercomposefile_database_2 ... done
+Creating dockercomposefile_database_3 ... done
+Creating dockercomposefile_web_1      ... done
+
+C:\Users\ADITI\DockerComposeFile>docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                            NAMES
+754b25003626   redis     "docker-entrypoint.s…"   7 seconds ago   Up 5 seconds   6379/tcp                         dockercomposefile_database_2
+3bd54faf2d83   redis     "docker-entrypoint.s…"   7 seconds ago   Up 5 seconds   6379/tcp                         dockercomposefile_database_3
+d90761026c9f   nginx     "/docker-entrypoint.…"   7 seconds ago   Up 5 seconds   80/tcp, 0.0.0.0:5000->5000/tcp   dockercomposefile_web_1
+28748ab682e8   redis     "docker-entrypoint.s…"   7 seconds ago   Up 5 seconds   6379/tcp                         dockercomposefile_database_1
+
+C:\Users\ADITI\DockerComposeFile>docker-compose down
+Stopping dockercomposefile_database_2 ... done
+Stopping dockercomposefile_database_3 ... done
+Stopping dockercomposefile_web_1      ... done
+Stopping dockercomposefile_database_1 ... done
+Removing dockercomposefile_database_2 ... done
+Removing dockercomposefile_database_3 ... done
+Removing dockercomposefile_web_1      ... done
+Removing dockercomposefile_database_1 ... done
+Removing network dockercomposefile_default
+
+C:\Users\ADITI\DockerComposeFile>
