@@ -132,4 +132,230 @@ IMAGE          CREATED      CREATED BY                                      SIZE
 
 
 *******************Q10. Get the Apache Tomcat 7 server image from the docker hub*******************
+docker pull tomcat
+
+
+11.
+docker run --name tomcat1 tomcat
+
+
+12.
+docker inspect c0e850d7b9bb | grep "IPAddress" 
+
+13.
+docker port 193cff3fd3b5
+
+15.
+C:\Users\ADITI>docker image inspect c0e850d7b9bb -f={{.Size}}
+667421195
+
+16.
+ls
+
+17.
+C:\Users\ADITI>docker image inspect c0e850d7b9bb -f={{.Config.ExposedPorts}}
+map[8080/tcp:{}]
+
+18.
+C:\Users\ADITI>docker run --name tomcat2 tomcat
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Apr-2021 16:30:33.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.45
+30-Apr-2021 16:30:33.825 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 30 2021 10:29:04 UTC
+30-Apr-2021 16:30:33.825 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.45.0
+30-Apr-2021 16:30:33.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-Apr-2021 16:30:33.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.4.72-microsoft-standard-WSL2
+30-Apr-2021 16:30:33.828 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-Apr-2021 16:30:33.829 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/local/openjdk-11
+30-Apr-2021 16:30:33.830 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.11+9
+30-Apr-2021 16:30:33.831 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+30-Apr-2021 16:30:33.833 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /usr/local/tomcat
+30-Apr-2021 16:30:33.834 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /usr/local/tomcat
+30-Apr-2021 16:30:33.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Apr-2021 16:30:33.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-Apr-2021 16:30:33.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-Apr-2021 16:30:33.900 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Apr-2021 16:30:33.901 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Apr-2021 16:30:33.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties
+30-Apr-2021 16:30:33.903 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Apr-2021 16:30:33.906 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-Apr-2021 16:30:33.908 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+30-Apr-2021 16:30:33.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Apr-2021 16:30:33.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+30-Apr-2021 16:30:33.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/usr/local/tomcat
+30-Apr-2021 16:30:33.911 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/usr/local/tomcat
+30-Apr-2021 16:30:33.912 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/usr/local/tomcat/temp
+30-Apr-2021 16:30:33.961 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.27] using APR version [1.6.5].
+30-Apr-2021 16:30:33.961 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+30-Apr-2021 16:30:33.961 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+30-Apr-2021 16:30:33.993 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1d  10 Sep 2019]
+30-Apr-2021 16:30:34.897 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-Apr-2021 16:30:34.992 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1775] milliseconds
+30-Apr-2021 16:30:35.161 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-Apr-2021 16:30:35.163 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.45]
+30-Apr-2021 16:30:35.214 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+30-Apr-2021 16:30:35.262 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [269] milliseconds
+
+19.
+C:\Users\ADITI>docker pull ubuntu:19.04
+19.04: Pulling from library/ubuntu
+4dc9c2fff018: Pull complete
+0a4ccbb24215: Pull complete
+c0f243bc6706: Pull complete
+5ff1eaecba77: Pull complete
+Digest: sha256:2adeae829bf27a3399a0e7db8ae38d5adb89bcaf1bbef378240bc0e6724e8344
+Status: Downloaded newer image for ubuntu:19.04
+docker.io/library/ubuntu:19.04
+
+C:\Users\ADITI>docker images
+REPOSITORY        TAG       IMAGE ID       CREATED         SIZE
+ubuntu            latest    7e0aa2d69a15   6 days ago      72.7MB
+ubuntu            18.04     4eb8f7c43909   6 days ago      63.1MB
+tomcat            latest    c0e850d7b9bb   7 days ago      667MB
+redis             latest    739b59b96069   9 days ago      105MB
+jenkins/jenkins   lts       de181f8c70e8   10 days ago     569MB
+nginx             latest    62d49f9bab67   2 weeks ago     133MB
+ubuntu            19.04     c88ac1f841b7   15 months ago   70MB
+
+20.
+C:\Users\ADITI>docker container run -a c88ac1f841b7
+3f7dd287c0c6e9122051f17097ceb0d1210af464486b477558227b49386ed643
+
+21.
+C:\Users\ADITI>docker container run -d c88ac1f841b7
+3f7dd287c0c6e9122051f17097ceb0d1210af464486b477558227b49386ed643
+
+22.
+C:\Users\ADITI>docker container ls -a
+CONTAINER ID   IMAGE                 COMMAND                  CREATED              STATUS                          PORTS      NAMES
+3f7dd287c0c6   c88ac1f841b7          "/bin/bash"              About a minute ago   Exited (0) About a minute ago              trusting_hoover
+830096be333d   tomcat                "catalina.sh run"        17 minutes ago       Up 17 minutes                   8080/tcp   tomcat2
+193cff3fd3b5   tomcat                "catalina.sh run"        13 hours ago         Up 13 hours                     8080/tcp   tomcat1
+10a7e8082cc0   jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   3 days ago           Exited (143) 2 days ago                    beautiful_khayyam
+678d46730b1c   ubuntu                "bash"                   4 days ago           Up 8 minutes                               MyUbuntu1
+
+23.
+yes,running.
+
+24.
+C:\Users\ADITI>docker logs 830096be333d
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Apr-2021 16:30:33.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.45
+30-Apr-2021 16:30:33.825 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 30 2021 10:29:04 UTC
+30-Apr-2021 16:30:33.825 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.45.0
+30-Apr-2021 16:30:33.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-Apr-2021 16:30:33.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.4.72-microsoft-standard-WSL2
+30-Apr-2021 16:30:33.828 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-Apr-2021 16:30:33.829 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/local/openjdk-11
+30-Apr-2021 16:30:33.830 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.11+9
+30-Apr-2021 16:30:33.831 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+30-Apr-2021 16:30:33.833 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /usr/local/tomcat
+30-Apr-2021 16:30:33.834 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /usr/local/tomcat
+30-Apr-2021 16:30:33.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Apr-2021 16:30:33.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-Apr-2021 16:30:33.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-Apr-2021 16:30:33.900 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Apr-2021 16:30:33.901 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Apr-2021 16:30:33.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties
+30-Apr-2021 16:30:33.903 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Apr-2021 16:30:33.906 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-Apr-2021 16:30:33.908 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+30-Apr-2021 16:30:33.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Apr-2021 16:30:33.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+30-Apr-2021 16:30:33.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/usr/local/tomcat
+30-Apr-2021 16:30:33.911 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/usr/local/tomcat
+30-Apr-2021 16:30:33.912 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/usr/local/tomcat/temp
+30-Apr-2021 16:30:33.961 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.27] using APR version [1.6.5].
+30-Apr-2021 16:30:33.961 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+30-Apr-2021 16:30:33.961 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+30-Apr-2021 16:30:33.993 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1d  10 Sep 2019]
+30-Apr-2021 16:30:34.897 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-Apr-2021 16:30:34.992 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1775] milliseconds
+30-Apr-2021 16:30:35.161 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-Apr-2021 16:30:35.163 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.45]
+30-Apr-2021 16:30:35.214 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+30-Apr-2021 16:30:35.262 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [269] milliseconds
+
+
+25.
+C:\Users\ADITI>docker start 193cff3fd3b5
+193cff3fd3b5
+
+26.
+C:\Users\ADITI>docker exec -it --user root 678d46730b1c /bin/bash
+root@678d46730b1c:/#
+
+27.
+created file
+
+28.
+root@678d46730b1c:/# apt-get install
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+root@678d46730b1c:/#
+
+29.
+root@678d46730b1c:/# exit
+exit
+
+C:\Users\ADITI>
+
+30.
+C:\Users\ADITI>docker ps -a
+CONTAINER ID   IMAGE                 COMMAND                  CREATED             STATUS                         PORTS      NAMES
+3f7dd287c0c6   c88ac1f841b7          "/bin/bash"              About an hour ago   Exited (0) About an hour ago              trusting_hoover
+830096be333d   tomcat                "catalina.sh run"        About an hour ago   Up About an hour               8080/tcp   tomcat2
+193cff3fd3b5   tomcat                "catalina.sh run"        14 hours ago        Up 14 hours                    8080/tcp   tomcat1
+10a7e8082cc0   jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   3 days ago          Exited (143) 2 days ago                   beautiful_khayyam
+678d46730b1c   ubuntu                "bash"                   4 days ago          Up About an hour                          MyUbuntu1
+
+31.
+docker run --name MyUbuntu2 -it -a ubuntu 18.04
+
+32.
+C:\Users\ADITI>docker exec -it --user root 678d46730b1c /bin/bash
+root@678d46730b1c:/#
+
+33.
+root@678d46730b1c:/# ls
+bin   dev  home  lib32  libx32  mnt  proc  run   srv  tmp  var
+boot  etc  lib   lib64  media   opt  root  sbin  sys  usr
+//Not visible
+root@678d46730b1c:/# docker kill MyUbuntu2
+
+34.
+yes.
+
+35.
+C:\Users\ADITI>mkdir DockerFiles
+
+C:\Users\ADITI>cd DockerFiles/
+
+C:\Users\ADITI\DockerFiles>docker build -t myimage1:1.0 .
+[+] Building 0.1s (2/2) FINISHED
+ => [internal] load build definition from Dockerfile                       0.1s
+ => => transferring dockerfile: 2B                                         0.0s
+ => => transferring context:                                               0.0s
+ 
+ 36.
+ C:\Users\ADITI\DockerFiles> docker run myimage1
+ //yes
+ 
+ 37.
+ C:\Users\ADITI>docker stop 193cff3fd3b5
+193cff3fd3b5
+
+C:\Users\ADITI>docker kill 193cff3fd3b5
+193cff3fd3b5
+
+38.
+Created index.html
+put this data:
+          <h1>This is tomcat Container</h1>
+          
+open localhost:8080//index.html..you will see "This is tomcat Container".
+
+
+
 
