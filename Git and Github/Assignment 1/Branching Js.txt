@@ -1,0 +1,95 @@
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git checkout -b js-assignments
+Switched to a new branch 'js-assignments'
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (js-assignments)
+$ git show js-assignments: /c/Users/ADITI/Assignments
+tree js-assignments:
+
+README.txt
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (js-assignments)
+$ git checkout css-assignments /c/Users/ADITI/Assignments
+error: pathspec 'css-assignments' did not match any file(s) known to git
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (js-assignments)
+$ git checkout js-assignments /c/Users/ADITI/Assignments
+Updated 1 path from 2ce5c61
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (js-assignments)
+$ git commit -m "changes commited to js-assignments"
+On branch js-assignments
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (js-assignments)
+$ git commit -m "changes to current branch js-assignments"
+On branch js-assignments
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (js-assignments)
+$ git checkout master
+Switched to branch 'master'
+M       README.txt
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git commit -m "committing changes into master"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git checkout js-assignments
+Switched to branch 'js-assignments'
+M       README.txt
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (js-assignments)
+$ git commit -m "changes to current branch"
+On branch js-assignments
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (js-assignments)
+$ git checkout master
+Switched to branch 'master'
+M       README.txt
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git merge js-assignments
+Already up to date.
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git branch -d js-assignments
+Deleted branch js-assignments (was 6c5fb76).
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$

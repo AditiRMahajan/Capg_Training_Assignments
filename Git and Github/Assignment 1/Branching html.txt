@@ -1,0 +1,172 @@
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~
+$ mkdir Assignments
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~
+$ cd Assignments
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments
+$ git init
+Initialized empty Git repository in C:/Users/ADITI/Assignments/.git/
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git add README.txt
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git commit -m "created README text file"
+[master (root-commit) 6c5fb76] created README text file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.txt
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git log
+commit 6c5fb762efa9054c906fc93c2fcdfc3dee08c69f (HEAD -> master)
+Author: AditiRMahajan <adimahajan258@gmail.com>
+Date:   Fri Mar 12 18:48:25 2021 +0530
+
+    created README text file
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git checkout -b html-assignments
+Switched to a new branch 'html-assignments'
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (html-assignments)
+$ git commit -m "HTML assignments into html-assignments"
+On branch html-assignments
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (html-assignments)
+$ git commit -m "changes to branch"
+On branch html-assignments
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (html-assignments)
+$ git checkout master
+Switched to branch 'master'
+M       README.txt
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git commit -m "changes commited to master branch"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git checkout -b css-assignments
+Switched to a new branch 'css-assignments'
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (css-assignments)
+$ git commit -m "committing changes of css-assignments branch"
+On branch css-assignments
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (css-assignments)
+$ git checkout master
+Switched to branch 'master'
+M       README.txt
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git checkout html-assignments
+Switched to branch 'html-assignments'
+M       README.txt
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (html-assignments)
+$ git commit -m "committing changes to html-assignments branch"
+On branch html-assignments
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (html-assignments)
+$ git checkout master
+Switched to branch 'master'
+M       README.txt
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git merge html-assignments
+Already up to date.
+
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git log
+commit 6c5fb762efa9054c906fc93c2fcdfc3dee08c69f (HEAD -> master, html-assignments, css-assignments)
+Author: AditiRMahajan <adimahajan258@gmail.com>
+Date:   Fri Mar 12 18:48:25 2021 +0530
+
+    created README text file
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git branch -d html-assignments
+Deleted branch html-assignments (was 6c5fb76).
+

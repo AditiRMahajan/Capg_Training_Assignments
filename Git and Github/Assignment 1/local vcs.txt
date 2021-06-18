@@ -1,0 +1,340 @@
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~
+$ mkdir project_dir
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~
+$ cd project_dir
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir
+$ git init
+Initialized empty Git repository in C:/Users/ADITI/project_dir/.git/
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git add index.html
+fatal: pathspec 'index.html' did not match any files
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git add index.html
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git commit -m "Added a html file index"
+[master (root-commit) cec4c09] Added a html file index
+ 1 file changed, 302 insertions(+)
+ create mode 100644 index.html
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ touch .gitignore
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git commit -m "updated index file"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git log --all --decorate --oneline --graph
+* cec4c09 (HEAD -> master) Added a html file index
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git log
+commit cec4c094e6ec23db2c730e1563f00f674639e0d2 (HEAD -> master)
+Author: AditiRMahajan <adimahajan258@gmail.com>
+Date:   Fri Mar 12 15:28:07 2021 +0530
+
+    Added a html file index
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git add index.html
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git commit -m "reverting changes"
+[master 75e0520] reverting changes
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git log
+commit 75e0520efc5988d5eeb972ed9412a2c057877984 (HEAD -> master)
+Author: AditiRMahajan <adimahajan258@gmail.com>
+Date:   Fri Mar 12 17:16:09 2021 +0530
+
+    reverting changes
+
+commit cec4c094e6ec23db2c730e1563f00f674639e0d2
+Author: AditiRMahajan <adimahajan258@gmail.com>
+Date:   Fri Mar 12 15:28:07 2021 +0530
+
+    Added a html file index
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git revert 75e0520efc5988d5eeb972ed9412a2c057877984
+[master 2eebe38] Revert "reverting changes"
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git checkout --index.html
+error: unknown option `index.html'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track           set upstream info for new branch
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git checkout --index.html
+error: unknown option `index.html'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track           set upstream info for new branch
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git checkout --.
+error: unknown option `.'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track           set upstream info for new branch
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git config --global alias.my_add add
+error: invalid key: alias.my_add
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git config --global alias.my-add add
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git my-add index.html
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git commit -m "index file after renaming add"
+[master 8cf1e37] index file after renaming add
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git log
+commit 8cf1e37cd433eb26d816fe4eecf8536263ae3f9e (HEAD -> master)
+Author: AditiRMahajan <adimahajan258@gmail.com>
+Date:   Fri Mar 12 17:49:30 2021 +0530
+
+    index file after renaming add
+
+commit 2eebe38eddd8dd35fee86ca920e133bd5bd78027
+Author: AditiRMahajan <adimahajan258@gmail.com>
+Date:   Fri Mar 12 17:17:09 2021 +0530
+
+    Revert "reverting changes"
+
+    This reverts commit 75e0520efc5988d5eeb972ed9412a2c057877984.
+
+commit 75e0520efc5988d5eeb972ed9412a2c057877984
+Author: AditiRMahajan <adimahajan258@gmail.com>
+Date:   Fri Mar 12 17:16:09 2021 +0530
+
+    reverting changes
+
+commit cec4c094e6ec23db2c730e1563f00f674639e0d2
+Author: AditiRMahajan <adimahajan258@gmail.com>
+Date:   Fri Mar 12 15:28:07 2021 +0530
+
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git revert 8cf1e37cd433eb26d816fe4eecf8536263ae3f9e
+[master 79fc0b7] Revert "index file after renaming add"
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/project_dir (master)
+$

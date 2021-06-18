@@ -1,0 +1,76 @@
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git checkout -b css-assignments
+Switched to a new branch 'css-assignments'
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (css-assignments)
+$ git show css-assignments: /c/Users/ADITI/Assignments
+tree css-assignments:
+
+README.txt
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (css-assignments)
+$ git checkout css-assignments /c/Users/ADITI/Assignments
+Updated 1 path from 2ce5c61
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (css-assignments)
+$ git commit -m "changes commited to css-assignments"
+On branch css-assignments
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (css-assignments)
+$ git checkout master
+Switched to branch 'master'
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git commit -m "updated changes"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git checkout css-assignments
+Switched to branch 'css-assignments'
+M       README.txt
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (css-assignments)
+$ git commit -m "changes to current branch"
+On branch css-assignments
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (css-assignments)
+$ git checkout master
+Switched to branch 'master'
+M       README.txt
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git merge css-assignments
+Already up to date.
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$ git branch -d css-assignments
+Deleted branch css-assignments (was 6c5fb76).
+
+ADITI@LAPTOP-Q6QMBSRH MINGW64 ~/Assignments (master)
+$
